@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Dots</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+        pattern polygon:nth-child(even) {
+            fill: red
+        }
+    </style>
+</head>
+
+<body>
+    <svg id="diamondSVG" width="100%" height="100%">
+        <defs>
+            <pattern id="diamondDots" width="140" height="140" patternUnits="userSpaceOnUse">
+                <polygon points="35,5 65,35 35,65 5,35" fill="red" />
+                 <!-- Black diamond offset diagonally -->
+      <polygon points="105,5 135,35 105,65 75,35" fill="black" />
+            </pattern>
+        </defs>
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#diamondDots)" />
+    </svg>
+
+    <!-- <script>
+        const svg = document.getElementById("diamondSVG");
+        window.addEventListener('load', () => {
+            const svgWidth = svg.clientWidth;
+            const svgHeight = svg.clientHeight;
+            for(let y=10; y<svgHeight; y+=20) {
+                for(let x = 10; x<svgWidth; x+=20) {
+                    const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+                    use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', '#diamondSVG');
+                    use.setAttribute("x", x);
+                    use.setAttribute("y", y);
+                    svg.appendChild(use);
+                }
+            }
+        })
+    </script> -->
+</body>
+
+</html>

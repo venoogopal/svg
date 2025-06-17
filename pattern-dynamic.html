@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG: Pattern dynamic</title>
+</head>
+<body>
+    <svg id="dotSVG" width="1000" height="500"></svg>
+
+<script>
+  const svg = document.getElementById("dotSVG");
+  const colors = ['red', 'green', 'blue', 'orange', 'purple'];
+
+  for (let y = 10; y < 500; y += 20) {
+    for (let x = 10; x < 1000; x += 20) {
+      const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      circle.setAttribute("cx", x);
+      circle.setAttribute("cy", y);
+      circle.setAttribute("r", 3);
+      circle.setAttribute("fill", colors[Math.floor(Math.random() * colors.length)]);
+      svg.appendChild(circle);
+    }
+  }
+</script>
+</body>
+</html>
