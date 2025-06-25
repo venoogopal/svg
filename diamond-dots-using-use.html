@@ -10,21 +10,20 @@
         body {
             height: 100%;
         }
-        pattern polygon:nth-child(even) {
-            fill: red
-        }
     </style>
 </head>
 
 <body>
     <svg id="diamondSVG" width="100%" height="100%">
         <defs>
-            <pattern id="diamondDots" width="140" height="140" patternUnits="userSpaceOnUse">
-                <polygon points="35,5 65,35 35,65 5,35" fill="red" />
-                 <!-- Black diamond offset diagonally -->
-      <polygon points="105,5 135,35 105,65 75,35" fill="black" />
+            <pattern id="diamondDots" width="20" height="20" patternUnits="userSpaceOnUse">
+                <!-- Red diamonds (Top Row) -->
+                <polygon points="5,0 10,5 5,10 0,5" fill="red" />
+                <!-- Black diamonds (Bottom Row, shifted horizontally) -->
+                <polygon points="15,10 20,15 15,20 10,15" fill="black" />
             </pattern>
         </defs>
+
         <rect x="0" y="0" width="100%" height="100%" fill="url(#diamondDots)" />
     </svg>
 
